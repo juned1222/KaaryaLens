@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120" fill="none">
+  <!-- Brandmark "कार्यLens" compact -->
+  <g id="brandmark-compact">
+    <!-- "कार्य" in Primary Navy -->
+    <text x="24" y="88" font-family="'Noto Sans Devanagari', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="80" font-weight="900" fill="#0F172A" letter-spacing="-0.02em">कार्य</text>
+    
+    <!-- "L" in Accent Orange -->
+    <text x="228" y="88" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="86" font-weight="900" fill="#F59E0B" letter-spacing="-0.02em">L</text>
+    
+    <!-- "ens" in Primary Navy -->
+    <text x="282" y="88" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="86" font-weight="800" fill="#0F172A" letter-spacing="-0.03em">ens</text>
+    
+    <!-- Upward Growth Lens Accent Angle in Orange above top-right of "ens" -->
+    <path d="M430 24 H462 V56" fill="none" stroke="#F59E0B" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

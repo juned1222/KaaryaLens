@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 180" width="540" height="180" fill="none">
+  <!-- Brandmark "कार्यLens" -->
+  <g id="brandmark">
+    <!-- "कार्य" in Primary Navy -->
+    <text x="32" y="108" font-family="'Noto Sans Devanagari', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="88" font-weight="900" fill="#0F172A" letter-spacing="-0.02em">कार्य</text>
+    
+    <!-- "L" in Accent Orange -->
+    <text x="250" y="108" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="94" font-weight="900" fill="#F59E0B" letter-spacing="-0.02em">L</text>
+    
+    <!-- "ens" in Primary Navy -->
+    <text x="310" y="108" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="94" font-weight="800" fill="#0F172A" letter-spacing="-0.03em">ens</text>
+    
+    <!-- Upward Growth Lens Accent Angle in Orange above top-right of "ens" -->
+    <path d="M470 38 H504 V72" fill="none" stroke="#F59E0B" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Tagline: "See beyond the resume." -->
+  <text x="80" y="152" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="25" font-weight="400" fill="#0F172A" letter-spacing="0.22em">See beyond the resume.</text>
+</svg>

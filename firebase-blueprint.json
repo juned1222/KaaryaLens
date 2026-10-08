@@ -1,0 +1,128 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and credentials",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Unique identifier" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "Full name" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Role": {
+      "title": "Role",
+      "description": "Target job description and parsed requirements",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Role ID" },
+        "userId": { "type": "string", "description": "Owner user ID" },
+        "title": { "type": "string", "description": "Job title" },
+        "employer": { "type": "string", "description": "Company name" },
+        "location": { "type": "string", "description": "City or remote" },
+        "experienceLevel": { "type": "string", "description": "Fresher, Junior, Mid, Senior" },
+        "jdRaw": { "type": "string", "description": "Raw pasted JD text" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      },
+      "required": ["id", "userId", "title", "employer"]
+    },
+    "Analysis": {
+      "title": "Analysis",
+      "description": "Structured job readiness evaluation and scoring",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Analysis ID" },
+        "roleId": { "type": "string", "description": "Associated role ID" },
+        "userId": { "type": "string", "description": "User ID" },
+        "readinessScore": { "type": "number", "description": "Overall score 0-100" },
+        "skillFitScore": { "type": "number", "description": "Skill fit 0-100" },
+        "evidenceScore": { "type": "number", "description": "Evidence strength 0-100" },
+        "interviewReadinessScore": { "type": "number", "description": "Interview readiness 0-100" },
+        "createdAt": { "type": "string", "description": "Analysis timestamp" }
+      },
+      "required": ["id", "roleId", "userId", "readinessScore"]
+    },
+    "CandidateProfile": {
+      "title": "CandidateProfile",
+      "description": "Normalized candidate profile extracted from resume and input",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Profile ID" },
+        "userId": { "type": "string", "description": "User ID" },
+        "headline": { "type": "string", "description": "Professional headline" },
+        "updatedAt": { "type": "string", "description": "Last update" }
+      },
+      "required": ["id", "userId"]
+    },
+    "Evidence": {
+      "title": "Evidence",
+      "description": "Verified repository or portfolio evidence item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Evidence item ID" },
+        "userId": { "type": "string", "description": "User ID" },
+        "source": { "type": "string", "description": "GitHub, Portfolio, Project, Resume" },
+        "claim": { "type": "string", "description": "Skill claim" },
+        "strength": { "type": "string", "description": "Strong, Moderate, Limited" }
+      },
+      "required": ["id", "userId", "source", "claim"]
+    },
+    "Interview": {
+      "title": "Interview",
+      "description": "Job specific interview session questions and evaluations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Interview session ID" },
+        "roleId": { "type": "string", "description": "Role ID" },
+        "userId": { "type": "string", "description": "User ID" },
+        "totalScore": { "type": "number", "description": "Evaluated interview score" },
+        "createdAt": { "type": "string", "description": "Session timestamp" }
+      },
+      "required": ["id", "roleId", "userId"]
+    },
+    "CareerPath": {
+      "title": "CareerPath",
+      "description": "Target career pathway recommendations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Career path ID" },
+        "userId": { "type": "string", "description": "User ID" },
+        "title": { "type": "string", "description": "Path title" },
+        "fit": { "type": "number", "description": "Fit percentage" }
+      },
+      "required": ["id", "userId", "title", "fit"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User account documents"
+    },
+    "/roles/{roleId}": {
+      "schema": { "$ref": "#/entities/Role" },
+      "description": "Analyzed job roles"
+    },
+    "/analyses/{analysisId}": {
+      "schema": { "$ref": "#/entities/Analysis" },
+      "description": "Role readiness analyses"
+    },
+    "/candidate_profiles/{profileId}": {
+      "schema": { "$ref": "#/entities/CandidateProfile" },
+      "description": "Candidate structured profile"
+    },
+    "/evidence/{evidenceId}": {
+      "schema": { "$ref": "#/entities/Evidence" },
+      "description": "Claim vs evidence artifacts"
+    },
+    "/interviews/{interviewId}": {
+      "schema": { "$ref": "#/entities/Interview" },
+      "description": "Interview simulation sessions"
+    },
+    "/career_paths/{pathId}": {
+      "schema": { "$ref": "#/entities/CareerPath" },
+      "description": "Generated career pathways"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "KaaryaLens",
+  "description": "AI-powered Job Readiness & Career Intelligence platform. See beyond the resume.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
